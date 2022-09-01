@@ -23,7 +23,6 @@ export default class SignupPage {
         cy.get('input[name="city-uf"]').should('have.value', deliver.address.city_state)
 
         cy.contains('.delivery-method li', deliver.delivery_method).click()
-
         cy.get('input[accept^="image"]').attachFile('/images/' + deliver.cnh)
     }
 
@@ -31,12 +30,14 @@ export default class SignupPage {
         cy.get('form button[type="submit"]').click()
     }
 
-    modalContentShouldBe(expected_message) {
-        cy.get('.swal2-container .swal2-html-container').should('have.text', expected_message)
+    modalContentShouldBe(expectedMessage) {
+        cy.get('.swal2-container .swal2-html-container')
+        .should('have.text', expectedMessage)
     }
 
-    alertMessageShouldBe() {
-        cy.get('.alert-error').should('have.text', 'Oops! CPF inválido')
+    alertMessageShouldBe(expectedMessage) {
+        cy.get('.alert-error')
+        .should('have.text', expectedMessage)
     }
     
 }
