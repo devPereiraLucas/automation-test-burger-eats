@@ -17,7 +17,8 @@ describe('Cadastro', ()=> {
                 complemento: 'Casa',
                 bairro: 'Guarani',
                 cidade_uf: 'Brusque/SC', 
-            }
+            },
+            metodo_entrega: 'Moto'
         }
 
         cy.get('input[name="name"]').type(entregador.nome)
@@ -34,6 +35,8 @@ describe('Cadastro', ()=> {
         cy.get('input[name="address"]').should('have.value', entregador.endereco.rua)
         cy.get('input[name="district"]').should('have.value', entregador.endereco.bairro)
         cy.get('input[name="city-uf"]').should('have.value', entregador.endereco.cidade_uf)
+
+        cy.contains('.delivery-method li', entregador.metodo_entrega).click()
         
     })
 })
