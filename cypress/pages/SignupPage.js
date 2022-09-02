@@ -1,4 +1,4 @@
-export default class SignupPage {
+export default new class SignupPage {
     go() {
         cy.visit('/')
         cy.get('a[href="/deliver"]').click()
