@@ -1,9 +1,10 @@
 name: Cypress Regression Tests
 
-on: [push]
-  branches:
-    - 'master'
-
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
 jobs:
 
   ui-chrome-tests:
