@@ -9,7 +9,9 @@
   "author": "Lucas Pereira",
   "license": "MIT",
   "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
     "cypress": "^9.7.0",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "gerador-validador-cpf": "^5.0.2"
   }
 }
